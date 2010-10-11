@@ -696,21 +696,5 @@ function taskman_default_usage()
   echo " -b    batch mode: be super quite, don't even output any system messages\n";
 }
 
-/**
- * @desc Encodes tasks as json array
- */
-function task_json()
-{
-  $json = array();
-  foreach(taskman_gettasks() as $task)
-  {
-    $json[$task->getName()] = $task->getProps();
-  }
-  echo json_encode($json);
-}
-
 //}}}
-
-if(version_compare(PHP_VERSION, '5.2.99', '>') && file_exists(dirname(__FILE__) . '/taskman-ns.inc.php'))
-  require_once(dirname(__FILE__) . '/taskman-ns.inc.php');
 
