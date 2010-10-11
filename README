@@ -1,0 +1,6 @@
+taskman is a simple PHP library for writing automation tasks in a similar with
+Ant and rake fashion.
+
+It's probably not that elegant as rake but if you want to stick to PHP and have
+Ant-alike functionality without any XML programming then taskman may turn out
+to be handy.
