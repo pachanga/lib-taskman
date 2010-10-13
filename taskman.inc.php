@@ -621,14 +621,14 @@ function taskman_config($name, $def=null)
 
 function taskman_rmdir_recurse($path)
 {
-  $path= rtrim($path, '/').'/';
+  $path = rtrim($path, '/').'/';
   $handle = opendir($path);
   for(;false !== ($file = readdir($handle));)
   {
-    if($file != "." and $file != ".." )
+    if($file != "." and $file != "..")
     {
-      $fullpath= $path.$file;
-      if( is_dir($fullpath) )
+      $fullpath = $path.$file;
+      if(is_dir($fullpath))
       {
         taskman_rmdir_recurse($fullpath);
         rmdir($fullpath);
@@ -638,6 +638,7 @@ function taskman_rmdir_recurse($path)
     }
   }
   closedir($handle);
+  rmdir($path);
 }
 
 //{{{builtin tasks
